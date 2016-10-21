@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color2"
+    tools:context="faith.stufinite.time2eat.time2eat.Menu">
+    <Button
+        android:id="@+id/btn"
+        android:layout_above="@+id/btn1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="首頁"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#AA123456" />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_above="@+id/btn2"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="1"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#AA123456" />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_above="@+id/btn3"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="2"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#AA123456"/>
+    <Button
+        android:id="@+id/btn3"
+        android:layout_above="@+id/btnResturantList"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="3"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#AA123456"/>
+    <Button
+        android:id="@+id/btnResturantList"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="餐廳列表"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:background="#AA123456"/>
+
+
+</RelativeLayout>
