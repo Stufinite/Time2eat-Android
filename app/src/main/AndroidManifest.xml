@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cjhwong.slicendice">
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/snd_monster"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.cjhwong.slicendice.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <meta-data android:name="com.google.android.apps.drive.APP_ID" android:value="id=659939660406-49ibg07mo6fbtrfu268rvm1cr52so4n1.apps.googleusercontent.com" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.cjhwong.slicendice.AddOrderActivity"/>
+        <activity android:name="com.cjhwong.slicendice.EditOrderActivity"/>
+        <activity android:name="com.cjhwong.slicendice.FlavourPickerActivity"/>
+        <activity android:name="com.cjhwong.slicendice.SetFlavoursActivity"/>
+
+    </application>
+</manifest>

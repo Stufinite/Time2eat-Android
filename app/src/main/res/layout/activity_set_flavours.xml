@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SetFlavoursActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/flavour_7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_9"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/flavour_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/flavour_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/flavour_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="textCapCharacters"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCancel"
+            android:text="@string/addOrderCancel" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onSave"
+            android:text="@string/addOrderSave" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".AddOrderActivity">
+
+        <LinearLayout
+            android:id="@+id/DateTimeTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_event_black_18dp" />
+
+            <Button
+                android:id="@+id/orderDateButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:background="@android:color/background_light" />
+
+            <Button
+                android:id="@+id/orderTimeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@android:color/background_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/NameTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/DateTimeTextContainer"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_contacts_black_18dp" />
+
+            <EditText
+                android:id="@+id/orderNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/addOrderName"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PhoneTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NameTextContainer"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_phone_black_18dp" />
+
+            <EditText
+                android:id="@+id/orderPhoneText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/addOrderPhone"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/AddressTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PhoneTextContainer"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_location_on_black_18dp" />
+
+            <EditText
+                android:id="@+id/orderAddressText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/addOrderAddress"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/NoteTextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AddressTextContainer"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_format_align_left_black_18dp" />
+
+            <EditText
+                android:id="@+id/orderNoteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/addOrderNote"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/CheckBoxContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NoteTextContainer"
+            android:orientation="horizontal"
+            android:padding="24dp">
+
+            <CheckBox
+                android:id="@+id/orderHalfBoxCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:checked="false"
+                android:text="@string/addOrderHalfBox" />
+
+            <CheckBox
+                android:id="@+id/orderPaidCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:checked="false"
+                android:text="@string/addOrderPaid" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/FlavourContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CheckBoxContainer"
+            android:padding="8dp"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_format_align_left_black_18dp" />
+
+            <Button
+                android:id="@+id/orderFlavour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:hint="@string/addOrderFlavour"
+                android:onClick="onAddFlavour" />
+
+            <EditText
+                android:id="@+id/orderPieces"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:inputType="numberDecimal"
+                android:text="@string/addOrderAmount"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/addOrderPiece"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="end"
+            android:layout_below="@id/FlavourContainer"
+            android:weightSum="2">
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:onClick="onCancel"
+                android:text="@string/addOrderCancel" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:onClick="onSubmit"
+                android:text="@string/addOrderSave" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

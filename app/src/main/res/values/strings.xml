@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Slice N\' Dice</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Order Detail-->
+    <string name="orderAmount">10 P 1 W</string>
+    <string name="orderInfo">Paid/Taken</string>
+    <string name="orderName">The Monster</string>
+    <string name="orderPhone">0970847007</string>
+    <string name="orderAddress">台灣台中市南區忠孝路183號</string>
+    <string name="orderNote">Note here</string>
+    <string name="orderTime">16:30</string>
+
+    <!--Add Order-->
+    <string name="addOrderAddress">Address</string>
+    <string name="addOrderPhone">Phone number</string>
+    <string name="addOrderName">Name</string>
+    <string name="addOrderNote">Note here</string>
+    <string name="addOrderCancel">Cancel</string>
+    <string name="addOrderSave">Save</string>
+    <string name="addOrderHalfBox">Half Box</string>
+    <string name="addOrderPaid">Paid</string>
+    <string name="addOrderFlavour">Input flavours</string>
+    <string name="addOrderAmount">10</string>
+    <string name="addOrderPiece">P</string>
+
+    <!--Third Party Code-->
+    <string name="calculator_0">H</string>
+    <string name="calculator_1">DC</string>
+    <string name="calculator_2">MC</string>
+    <string name="calculator_3">MB</string>
+    <string name="calculator_4">BE</string>
+    <string name="calculator_5">BBQ</string>
+    <string name="calculator_6">TC</string>
+    <string name="calculator_7">BLT</string>
+    <string name="calculator_8">P</string>
+    <string name="calculator_9">New</string>
+    <string name="calculator_decimal">.</string>
+    <string name="calculator_equals">=</string>
+    <string name="calculator_plus">+</string>
+    <string name="calculator_minus">-</string>
+    <string name="calculator_divide">÷</string>
+    <string name="calculator_multiply">×</string>
+    <string name="calculator_delete">DEL</string>
+</resources>
+

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="3dp">
+
+    <RelativeLayout
+        android:id="@+id/orderContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/orderTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:hint="@string/orderTime"
+                android:textColor="@color/colorText"
+                android:textSize="60sp" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:hint="@string/orderAmount"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorText"
+                android:textSize="35sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/orderInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderTime"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textAlignment="viewEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/orderFlavour"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/orderInfo"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:id="@+id/orderContents"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderFlavour"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/orderContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10">
+
+                <Button
+                    android:id="@+id/name"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="5"
+                    android:hint="@string/orderName"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/phone"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="5"
+                    android:hint="@string/orderPhone"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/address"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/orderAddress"
+                android:textIsSelectable="false"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orderNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderContents"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="@string/orderNote"
+                android:paddingLeft="32dp"
+                android:textColor="@color/colorPrimary"
+                android:textIsSelectable="false"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orderOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/orderNote"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/removeCardButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Remove" />
+
+            <Button
+                android:id="@+id/doneOrderButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Done" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
