@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FF3333"
+        android:gravity="center">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="查詢"
+            android:id="@+id/tbutton"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/tbutton2"
+            android:layout_toStartOf="@+id/tbutton2"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日餐廳"
+            android:id="@+id/tbutton2"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/tbutton3"
+            android:layout_toStartOf="@+id/tbutton3"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="特價資訊"
+            android:id="@+id/tbutton3"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/tbutton4"
+            android:layout_toStartOf="@+id/tbutton4"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="附近餐廳"
+            android:id="@+id/tbutton4"
+            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="217dp"
+        android:text="Today" />
+
+</RelativeLayout>
