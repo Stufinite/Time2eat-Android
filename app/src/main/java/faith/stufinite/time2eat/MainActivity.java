@@ -17,7 +17,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private ViewPager pager;
+    public static ViewPager pager;
     private TabLayout tabs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         private final int[] imageResId = {
                 android.R.drawable.ic_menu_share,
                 android.R.drawable.ic_menu_add,
+                android.R.drawable.ic_menu_delete,
                 android.R.drawable.ic_menu_delete
         };
 
