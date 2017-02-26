@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="33dp"
+        android:id="@+id/ResTitle" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ResPhoto"
+        android:layout_alignEnd="@+id/ResPhoto"
+        android:layout_marginTop="57dp"
+        android:id="@+id/ResData" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="74dp"
+        android:id="@+id/ResPhoto"
+        android:layout_below="@+id/ResTitle"
+        android:layout_alignEnd="@+id/ResTitle" />
+
+    <Button
+        android:text="order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="39dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/orderbutton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:backgroundTint="@android:color/holo_red_light" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/ResData"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="111dp"
+        android:id="@+id/ResEnvi" />
+</RelativeLayout>

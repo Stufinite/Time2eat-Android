@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,12 +72,12 @@ public class TabFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 2;
+            return 4;
         }
 
         @Override
         public Fragment getItem(int position) {
-            return ShopsFragment.newInstance(position);
+            return RessFragment.newInstance(position);
         }
     }
    }

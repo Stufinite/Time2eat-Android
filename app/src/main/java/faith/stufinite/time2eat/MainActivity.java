@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar); //製作自己的header bar
         setSupportActionBar(toolbar);
-
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs = (TabLayout) findViewById(R.id.tabs);

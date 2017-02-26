@@ -12,9 +12,9 @@ import java.util.List;
  */
 
 public class ReslistAdapter extends RecyclerView.Adapter<ReslistAdapter.myViewHolder> {
-    private List<ShopsFragment.Restaurent> userList;
+    private List<RessFragment.Restaurent> userList;
     public static Context context;
-    public ReslistAdapter(List<ShopsFragment.Restaurent> userList, Context context) {
+    public ReslistAdapter(List<RessFragment.Restaurent> userList, Context context) {
         this.userList = userList;
         this.context = context;
     }
@@ -30,8 +30,7 @@ public class ReslistAdapter extends RecyclerView.Adapter<ReslistAdapter.myViewHo
 
     @Override
     public void onBindViewHolder(myViewHolder holder, int position) {
-        ShopsFragment.Restaurent user = userList.get(position);
-
+        RessFragment.Restaurent user = userList.get(position);
         holder.resPic.setText(Integer.toString(user.getImageResourceId()));
         holder.resName.setText(user.getresName());
         holder.resPoint.setText(user.getresPoint());
@@ -58,12 +57,9 @@ public class ReslistAdapter extends RecyclerView.Adapter<ReslistAdapter.myViewHo
                 @Override
                 public void onClick(View v)
                 {
-//                    Toast.makeText(v.getContext(), resPic.getText(), Toast.LENGTH_LONG).show();
-                    TabFragment.ShopPager.setCurrentItem(Integer.valueOf(resPic.getText().toString()));
-//                    View resview = LayoutInflater.
-//                            from(context).inflate(R.layout.respage,null,false);
-//                    MainActivity.pager.removeAllViews();
-//                    MainActivity.pager.addView(resview);
+                    int id = Integer.valueOf(resPic.getText().toString());
+                    RessFragment.ResId = id;
+                    TabFragment.ShopPager.setCurrentItem(1);
                 }
             });
         }
