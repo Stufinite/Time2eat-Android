@@ -93,6 +93,7 @@ public class Resdetail extends Fragment{
                 });
                 break;
             case 1:
+                RelativeLayout rl = (RelativeLayout) inflater.inflate(R.layout.pickdish,container,false);
                 TableLayout tl = new TableLayout(getActivity());
                 TableLayout.LayoutParams lp = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.MATCH_PARENT);
                 tl.setLayoutParams(lp);

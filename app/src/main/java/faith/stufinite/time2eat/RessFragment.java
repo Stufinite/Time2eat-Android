@@ -46,7 +46,7 @@ public class RessFragment extends Fragment {
         f.setArguments(b);
         return f;
     }
-
+    public static View[] dishrow;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,9 +131,9 @@ public class RessFragment extends Fragment {
                 break;
             case 2:
                 Log.d("yeaah","fuck");
-                RelativeLayout rl = new RelativeLayout(getActivity());
+                RelativeLayout rl = (RelativeLayout) inflater.inflate(R.layout.pickdish,container,false);
                 TableLayout tl = new TableLayout(getActivity());
-                TableLayout.LayoutParams lp = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.MATCH_PARENT);
+                TableLayout.LayoutParams lp = new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,TableLayout.LayoutParams.WRAP_CONTENT);
                 tl.setLayoutParams(lp);
                 int dishn = 0;
                 try {
@@ -141,32 +141,56 @@ public class RessFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                View dishrow;
+                dishrow = new View[dishn];
                 for (int i = 0;i < dishn ;i++)
                 {
-                    dishrow  = inflater.inflate(R.layout.dishtablerow, null,false);
-                    TextView tv = (TextView) dishrow.findViewById(R.id.dish);
+                    dishrow[i]  = inflater.inflate(R.layout.dishtablerow, null,false);
+                    TextView tv = (TextView) dishrow[i].findViewById(R.id.dish);
                     try {
                         tv.setText(menu.getJSONArray("dish").getJSONObject(0).getString("name"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    tl.addView(dishrow);
+                    tl.addView(dishrow[i]);
                 }
-                rl.addView(tl);
-                Button sendButton = new Button(getActivity());
-                sendButton.setText("OK");
-                sendButton.setOnClickListener(new View.OnClickListener(){
+                Button dishbutton = (Button) rl.findViewById(R.id.dishbutton);
+                dishbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
-
+                    public void onClick(View v) {
+                        TextView dishnum,dishname;
+                        JSONObject jarr = new JSONObject();
+                        int num;
+                        for(int i = 0;i < dishrow.length;i++)
+                        {
+                            dishname = (TextView) dishrow[i].findViewById(R.id.dish);
+                            dishnum = (TextView) dishrow[i].findViewById(R.id.number);
+                            num = Integer.valueOf(dishnum.getText().toString());
+                            if (num > 0)
+                            {
+                                try {
+                                    jarr.put(dishname.getText().toString(),num);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        //sendmessage;
+                        Log.d("dishjson",jarr.toString());
+                        TabFragment.ShopPager.setCurrentItem(3);
                     }
                 });
-                rl.addView(sendButton);
+                rl.addView(tl);
                 fl.addView(rl);
                 break;
             case 3:
+                TextView tv = new TextView(getActivity());
+                tv.setText("success");
+                fl.addView(tv);
+                break;
+            case 4:
+                TextView tvf = new TextView(getActivity());
+                tvf.setText("fucku");
+                fl.addView(tvf);
                 break;
             default:
                 break;

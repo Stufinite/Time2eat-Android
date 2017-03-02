@@ -19,11 +19,19 @@
     <Space
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="100dp"/>
+        android:minWidth="50dp"/>
 
-    <NumberPicker
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"/>
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/number"/>
+
+
+    <!--<NumberPicker-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/numberPicker"/>-->
 
 </TableRow>
