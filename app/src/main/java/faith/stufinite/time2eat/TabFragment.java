@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -18,7 +16,7 @@ public class TabFragment extends Fragment {
     private static final String ARG_POSITION = "position";
     private int position;
     private MainActivity mContext;
-    public static ViewPager ShopPager;
+    public static NoSwipeViewPager ShopPager;
 
     public static TabFragment newInstance(int position) {
         TabFragment f = new TabFragment();
@@ -39,7 +37,7 @@ public class TabFragment extends Fragment {
 
         mContext = (MainActivity) getActivity();
         FrameLayout fl = new FrameLayout(mContext);
-        RelativeLayout rl = (RelativeLayout) inflater.inflate(R.layout.respage,container,false);
+        RelativeLayout rl = (RelativeLayout) inflater.inflate(R.layout.resrowpage,container,false);
 //        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 //        FrameLayout fl = new FrameLayout(getActivity());
 //        fl.setLayoutParams(params);
@@ -48,7 +46,8 @@ public class TabFragment extends Fragment {
         switch (position) {
             case 0:
                 //ShopPager = (ViewPager) mContext.findViewById(R.id.pager);
-                ShopPager = (ViewPager) rl.findViewById(R.id.respager);
+                ShopPager = (NoSwipeViewPager) rl.findViewById(R.id.respager);
+                ShopPager.setSwipeable(false);
                 ShopPager.setAdapter(new ShopPagerAdapter(getChildFragmentManager()));
                 fl.addView(rl);
                 ShopPager.setCurrentItem(0);
@@ -65,7 +64,7 @@ public class TabFragment extends Fragment {
         return fl;
     }
 
-    public class ShopPagerAdapter extends FragmentPagerAdapter {
+    public class ShopPagerAdapter extends FragmentStatePagerAdapter {
 
         public ShopPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -81,4 +80,5 @@ public class TabFragment extends Fragment {
             return RessFragment.newInstance(position);
         }
     }
+
    }
