@@ -1,5 +1,8 @@
 package faith.stufinite.time2eat;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -22,6 +26,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,6 +91,7 @@ public class RessFragment extends Fragment {
                 fl.addView(mRecyclerView);
                 break;
             case 1:
+                final ImageView shopshot,envishot;
                 RelativeLayout detaillayout = (RelativeLayout) inflater.inflate(R.layout.resdetail,container,false);
                 url = "http://10.0.2.2:8000/t2e/api/restaurant/prof/?res_id=" + (ResId + 1);
                 menuurl = "http://10.0.2.2:8000/t2e/api/restaurant/menu/?res_id=" + (ResId + 1);
@@ -106,6 +115,24 @@ public class RessFragment extends Fragment {
                 }
                 TextView title = (TextView) detaillayout.findViewById(R.id.ResTitle);
                 TextView menutextv = (TextView) detaillayout.findViewById(R.id.ResData);
+                shopshot = (ImageView) detaillayout.findViewById(R.id.ResPhoto);
+                envishot = (ImageView) detaillayout.findViewById(R.id.ResEnvi);
+                new AsyncTask<String, Void, Bitmap>()
+                {
+                    @Override
+                    protected Bitmap doInBackground(String... params)
+                    {
+                        String url = params[0];
+                        return getBitmapFromURL(url);
+                    }
+
+                    @Override
+                    protected void onPostExecute(Bitmap result)
+                    {
+                        shopshot. setImageBitmap (result);
+                        super.onPostExecute(result);
+                    }
+                }.execute("圖片連結網址路徑");
                 try {
                     title.setText(resdata.getString("ResName"));
                     StringBuilder sb = new StringBuilder();
@@ -124,9 +151,6 @@ public class RessFragment extends Fragment {
                         TabFragment.ShopPager.setCurrentItem(2);
                     }
                 });
-//                RelativeLayout rl = (RelativeLayout) inflater.inflate(R.layout.resdetailpaper, container, false);
-//                resdetailpaper =  (ViewPager) rl.findViewById(R.id.resdetailpaper);
-                //resdetailpaper.setAdapter(new RessFragment.ResdetailPagerAdapter(getActivity().getSupportFragmentManager()));
                 fl.addView(detaillayout);
                 break;
             case 2:
@@ -198,6 +222,25 @@ public class RessFragment extends Fragment {
         return fl;
     }
 
+    private static Bitmap getBitmapFromURL(String imageUrl)
+    {
+        try
+        {
+            URL url = new URL(imageUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap bitmap = BitmapFactory.decodeStream(input);
+            return bitmap;
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     private List<RessFragment.Restaurent> getResInfor(JSONArray arr)
     {
         List<RessFragment.Restaurent> ResList = new ArrayList<>();
@@ -237,23 +280,6 @@ public class RessFragment extends Fragment {
             this.resName = name;
             this.resPoint = point;
             this.resLove = love;
-        }
-    }
-
-    public class ResdetailPagerAdapter extends FragmentPagerAdapter {
-
-        public ResdetailPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return Resdetail.newInstance(position,ResId);
         }
     }
 }
