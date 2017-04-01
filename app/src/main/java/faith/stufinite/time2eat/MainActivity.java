@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.tool_bar); //製作自己的header bar
         setSupportActionBar(toolbar);
         pager = (ViewPager) findViewById(R.id.pager);
+        Log.d("in","inin");
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.setupWithViewPager(pager);

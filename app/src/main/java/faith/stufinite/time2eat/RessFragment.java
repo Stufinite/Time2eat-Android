@@ -61,7 +61,6 @@ public class RessFragment extends Fragment {
         position = getArguments().getInt(ARG_POSITION);
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         mContext = (MainActivity) getActivity();
@@ -117,22 +116,28 @@ public class RessFragment extends Fragment {
                 TextView menutextv = (TextView) detaillayout.findViewById(R.id.ResData);
                 shopshot = (ImageView) detaillayout.findViewById(R.id.ResPhoto);
                 envishot = (ImageView) detaillayout.findViewById(R.id.ResEnvi);
-                new AsyncTask<String, Void, Bitmap>()
-                {
-                    @Override
-                    protected Bitmap doInBackground(String... params)
-                    {
-                        String url = params[0];
-                        return getBitmapFromURL(url);
-                    }
-
-                    @Override
-                    protected void onPostExecute(Bitmap result)
-                    {
-                        shopshot. setImageBitmap (result);
-                        super.onPostExecute(result);
-                    }
-                }.execute("圖片連結網址路徑");
+//                try {
+//                    String str = "http://10.0.2.2";
+//                    str += resdata.getString("avatar").substring(16);
+//                    new AsyncTask<String, Void, Bitmap>()
+//                    {
+//                        @Override
+//                        protected Bitmap doInBackground(String... params)
+//                        {
+//                            String url = params[0];
+//                            return getBitmapFromURL(url);
+//                        }
+//
+//                        @Override
+//                        protected void onPostExecute(Bitmap result)
+//                        {
+//                            shopshot. setImageBitmap (result);
+//                            super.onPostExecute(result);
+//                        }
+//                    }.execute(str);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
                 try {
                     title.setText(resdata.getString("ResName"));
                     StringBuilder sb = new StringBuilder();
@@ -246,8 +251,9 @@ public class RessFragment extends Fragment {
         List<RessFragment.Restaurent> ResList = new ArrayList<>();
         try
         {
-            ResList.add(new RessFragment.Restaurent(1,arr.getJSONObject(0).getString("ResName"),arr.getJSONObject(0).getString("score"),arr.getJSONObject(0).getString("ResLike")));
-            ResList.add(new RessFragment.Restaurent(2,"fuck","0","0"));
+            Log.d("avatar",arr.getJSONObject(0).getString("avatar"));
+            ResList.add(new RessFragment.Restaurent(1,arr.getJSONObject(0).getString("avatar"),arr.getJSONObject(0).getString("ResName"),arr.getJSONObject(0).getString("score"),arr.getJSONObject(0).getString("ResLike")));
+            //ResList.add(new RessFragment.Restaurent(2,null,"fuck","0","0"));
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -257,14 +263,14 @@ public class RessFragment extends Fragment {
 
     public class Restaurent
     {
-        private int imageResourceId;
+        private int resId;
+        private String imageResource;
         private String resName;
         private String resPoint;
         private String resLove;
 
-        public int getImageResourceId() {
-            return imageResourceId;
-        }
+        public  int getresId(){return resId;}
+        public String getImageResource(){return imageResource;}
         public String getresName() {
             return resName;
         }
@@ -275,8 +281,9 @@ public class RessFragment extends Fragment {
             return resLove;
         }
 
-        public Restaurent(int imageResourceId, String name, String point, String love) {
-            this.imageResourceId = imageResourceId;
+        public Restaurent(int resId, String imageResource, String name, String point, String love) {
+            this.resId = resId;
+            this.imageResource = imageResource;
             this.resName = name;
             this.resPoint = point;
             this.resLove = love;
